@@ -1,15 +1,13 @@
 [project]
 name = "code-debug-env"
-version = "1.0.0"
-description = "RL environment for debugging PyTorch code"
-
+version = "0.1.0"
+description = "OpenEnv Code Debugging Environment"
 dependencies = [
     "fastapi",
     "uvicorn",
-    "torch",
-    "huggingface_hub",
-    "openenv>=0.2.0"
+    "pydantic",
+    "openenv>=0.1.13"
 ]
 
 [project.scripts]
-server = "server:main"
+server = "server.app:app"
