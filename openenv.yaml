@@ -1,0 +1,10 @@
+name: code-debug-env
+version: 1.0.0
+
+description: RL environment where an agent fixes buggy PyTorch code.
+
+entrypoint: server.py
+
+endpoints:
+  reset: /reset
+  step: /step
