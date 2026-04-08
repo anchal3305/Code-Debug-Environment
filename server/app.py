@@ -1,17 +1,7 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from environment import CodeDebugEnv
+import uvicorn
 
-app = FastAPI()
-env = CodeDebugEnv()
+def main():
+    uvicorn.run("server:app", host="0.0.0.0", port=7860)
 
-class Action(BaseModel):
-    fixed_code: str
-
-@app.post("/reset")
-def reset():
-    return env.reset()
-
-@app.post("/step")
-def step(action: Action):
-    return env.step({"fixed_code": action.fixed_code})
+if __name__ == "__main__":
+    main()
