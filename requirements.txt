@@ -3,3 +3,4 @@ transformers
 huggingface_hub
 openenv
 gymnasium
+gradio==5.9.1
