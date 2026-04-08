@@ -1,10 +1,17 @@
+---
+title: Code Debugging Environment
+emoji: 🐛
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "4.44.0"
+app_file: app.py
+pinned: false
+---
+
 # Code Debugging Environment
 
 An OpenEnv-compatible RL environment where an AI agent fixes buggy PyTorch code.
-
-## What it does
-The agent receives broken Python/PyTorch functions and must return corrected versions.
-The environment runs fixes against a hidden test suite and returns a reward.
 
 ## Observation Space
 | Field | Description |
@@ -15,9 +22,7 @@ The environment runs fixes against a hidden test suite and returns a reward.
 | buggy_code | The broken Python function |
 
 ## Action Space
-```json
-{ "fixed_code": "def solve(a, b):\n    return a + b" }
-```
+`{ "fixed_code": "def solve(a, b):\n    return a + b" }`
 
 ## Reward Function
 | Outcome | Reward |
@@ -25,12 +30,6 @@ The environment runs fixes against a hidden test suite and returns a reward.
 | All tests pass | 1.00 |
 | Partial pass (k/n) | k/n |
 | Syntax error / crash | 0.00 |
-
-## How to Run
-```bash
-pip install -r requirements.txt
-python inference.py
-```
 
 ## Results
 - Agent: Qwen/Qwen2.5-72B-Instruct
