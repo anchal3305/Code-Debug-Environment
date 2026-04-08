@@ -1,0 +1,10 @@
+[project]
+name = "code-debug-env"
+version = "1.0.0"
+description = "RL environment for debugging PyTorch code"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "torch",
+    "huggingface_hub"
+]
